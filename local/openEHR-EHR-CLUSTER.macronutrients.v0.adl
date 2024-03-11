@@ -1,0 +1,1729 @@
+archetype (adl_version=1.4; uid=b6029faf-4089-4731-ac22-29569b4ae960)
+	openEHR-EHR-CLUSTER.macronutrients.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2016-12-14">
+		["name"] = <"Priscila Maranhão; Gustavo Bacelar">
+		["organisation"] = <"MEDCIDS-FMUP; VIRTUAL CARE">
+		["email"] = <"priscilamaranhao@gmail.com; gbacelar@gmail.com">
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Ricardo Correia","Pedro Marques","Duarte Ferreira","Heather Leslie, Ocean Health Systems, Australia">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			copyright = <"© openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details about the nutrients that are consumed in the largest quantities.">
+			keywords = <"nutrients","diet","lipids","carbohydrates","protein">
+			copyright = <"© openEHR Foundation">
+			use = <"Use to record details about the nutrients that are consumed in the largest quantities.
+
+This archetype has been designed to be used within the 'Details' SLOT in the OBSERVATION.dietary_nutrients archetype.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Franceschini, SCC; Priore, SE; Euclydes, MP et al. Necessidades e recomendações de nutrientes. In: Cuppari, L. Guias de medicina ambulatorial e hospitalar da EPM-UNIFESP, Nutricção Clínica no Adulto. Barueri, SP: Manole, 2014.
+
+Institute of Medicine/ Food and nutrition Board, 2011. Dietary reference Intake. Disponível em: <https://ods.od.nih.gov/Health_Information/Dietary_Reference_Intakes.aspx>
+
+FAO/WHO (Food and Agricultural/World Health Organization). Classificação dos Carboidratos - 1998. Disponível em: <http://fao.org>
+
+Caruso, L. Distúrbios do trato digestório. In: Cuppari, L. Guias de medicina ambulatorial e hospitalar da EPM-UNIFESP, Nutricção Clínica no Adulto. Barueri, SP: Manole, 2014.">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"c893de7011475ef4fe91d27ac49b43c3">
+		["build_uid"] = <"93209d8c-034d-436e-b4aa-7f9d2b3142dd">
+		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Macronutrients
+		items cardinality matches {1..*; unordered} matches {
+			CLUSTER[at0037] occurrences matches {0..1} matches {    -- Fatty acids
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0068] occurrences matches {0..1} matches {    -- Trans fatty acid
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"g">
+									>
+								>
+							>
+						}
+					}
+					CLUSTER[at0038] occurrences matches {0..1} matches {    -- Saturated
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0040] occurrences matches {0..1} matches {    -- Caprylic acid
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"g">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0041] occurrences matches {0..1} matches {    -- Caproic acid
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"g">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0042] occurrences matches {0..1} matches {    -- Lauric acid
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"g">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0043] occurrences matches {0..1} matches {    -- Myristic acid
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"g">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0044] occurrences matches {0..1} matches {    -- Palmitic acid
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"g">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0045] occurrences matches {0..1} matches {    -- Stearic acid
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"g">
+											>
+										>
+									>
+								}
+							}
+						}
+					}
+					CLUSTER[at0046] occurrences matches {0..1} matches {    -- Mounsaturated
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0048] occurrences matches {0..1} matches {    -- Myristoleic acid
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"g">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0049] occurrences matches {0..1} matches {    -- Palmitoleic acid
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"g">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0050] occurrences matches {0..1} matches {    -- Oleic acid
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"g">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0051] occurrences matches {0..1} matches {    -- Cis-vaccenic acid
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"g">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0052] occurrences matches {0..1} matches {    -- Eicosenoic acid
+								value matches {
+									DV_QUANTITY matches {*}
+								}
+							}
+							ELEMENT[at0053] occurrences matches {0..1} matches {    -- Docosapentaenoic acid
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"g">
+											>
+										>
+									>
+								}
+							}
+						}
+					}
+					CLUSTER[at0054] occurrences matches {0..1} matches {    -- Polyunsaturated
+						items cardinality matches {1..*; unordered} matches {
+							CLUSTER[at0056] occurrences matches {0..1} matches {    -- (n-3)
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0058] occurrences matches {0..1} matches {    -- Alpha linolenic acid (n-3)
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0059] occurrences matches {0..1} matches {    -- Eicosapentaenoic acid
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0060] occurrences matches {0..1} matches {    -- Docosahexaenoic acid
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0061] occurrences matches {0..1} matches {    -- Docosapentaenoic acid
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+												>
+											>
+										}
+									}
+								}
+							}
+							CLUSTER[at0057] occurrences matches {0..1} matches {    -- (n-6)
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0062] occurrences matches {0..1} matches {    -- Linoleic acid (n-6)
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0063] occurrences matches {0..1} matches {    -- Gama-linoleic acid
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0064] occurrences matches {0..1} matches {    -- Dihomo-gama-linoleic acid
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0065] occurrences matches {0..1} matches {    -- Arachidonic acid
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0066] occurrences matches {0..1} matches {    -- Adrenic acid
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0067] occurrences matches {0..1} matches {    -- Docosapentaenoic acid
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+												>
+											>
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[at0009] occurrences matches {0..1} matches {    -- Carbohydrates
+				items cardinality matches {1..*; unordered} matches {
+					CLUSTER[at0115] occurrences matches {0..1} matches {    -- Sugars
+						items cardinality matches {1..*; unordered} matches {
+							CLUSTER[at0118] occurrences matches {0..1} matches {    -- Monosaccharides
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0121] occurrences matches {0..1} matches {    -- Glucose
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+													["2"] = <
+														units = <"mg">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0123] occurrences matches {0..1} matches {    -- Galactose
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"mg">
+													>
+													["2"] = <
+														units = <"g">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0124] occurrences matches {0..1} matches {    -- Fructose
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+													["2"] = <
+														units = <"mg">
+													>
+												>
+											>
+										}
+									}
+								}
+							}
+							CLUSTER[at0119] occurrences matches {0..1} matches {    -- Disaccharides
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0125] occurrences matches {0..1} matches {    -- Sucrose
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"mg">
+													>
+													["2"] = <
+														units = <"g">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0126] occurrences matches {0..1} matches {    -- Lactose
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"mg">
+													>
+													["2"] = <
+														units = <"g">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0127] occurrences matches {0..1} matches {    -- Tetralose
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"mg">
+													>
+													["2"] = <
+														units = <"g">
+													>
+												>
+											>
+										}
+									}
+								}
+							}
+							CLUSTER[at0120] occurrences matches {0..1} matches {    -- Polyols
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0128] occurrences matches {0..1} matches {    -- Sorbitol
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"mg">
+													>
+													["2"] = <
+														units = <"g">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0129] occurrences matches {0..1} matches {    -- Mannitol
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+													["2"] = <
+														units = <"mg">
+													>
+												>
+											>
+										}
+									}
+								}
+							}
+						}
+					}
+					CLUSTER[at0116] occurrences matches {0..1} matches {    -- Oligosaccharides
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0133] occurrences matches {0..1} matches {    -- Maltodextrins
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"g">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0134] occurrences matches {0..1} matches {    -- Raffinose
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"g">
+											>
+											["2"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0135] occurrences matches {0..1} matches {    -- Stachyose
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"g">
+											>
+											["2"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0136] occurrences matches {0..1} matches {    -- Fruit-oligosaccharides
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+											["2"] = <
+												units = <"g">
+											>
+										>
+									>
+								}
+							}
+						}
+					}
+					CLUSTER[at0117] occurrences matches {0..1} matches {    -- Polysaccharides
+						items cardinality matches {1..*; unordered} matches {
+							CLUSTER[at0137] occurrences matches {0..1} matches {    -- Starch
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0139] occurrences matches {0..1} matches {    -- Amylose
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+													["2"] = <
+														units = <"mg">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0140] occurrences matches {0..1} matches {    -- Amylopectin
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+													["2"] = <
+														units = <"mg">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0141] occurrences matches {0..1} matches {    -- Starch-resistant
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+													["2"] = <
+														units = <"mg">
+													>
+												>
+											>
+										}
+									}
+								}
+							}
+							CLUSTER[at0138] occurrences matches {0..1} matches {    -- Non-starch
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0142] occurrences matches {0..1} matches {    -- Cellulose
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+													["2"] = <
+														units = <"mg">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0143] occurrences matches {0..1} matches {    -- Hemicellulose
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+													["2"] = <
+														units = <"mg">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0144] occurrences matches {0..1} matches {    -- Pectins
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+													["2"] = <
+														units = <"mg">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0145] occurrences matches {0..1} matches {    -- Hydrocolloids
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"g">
+													>
+													["2"] = <
+														units = <"mg">
+													>
+												>
+											>
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[at0006] occurrences matches {0..1} matches {    -- Proteins
+				items cardinality matches {1..*; unordered} matches {
+					CLUSTER[at0014] occurrences matches {0..1} matches {    -- Non-essential amino acids
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0019] occurrences matches {0..1} matches {    -- Serine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0018] occurrences matches {0..1} matches {    -- Glutamic acid
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0017] occurrences matches {0..1} matches {    -- Asparagine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0016] occurrences matches {0..1} matches {    -- Aspartic acid
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0015] occurrences matches {0..1} matches {    -- Alanine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+						}
+					}
+					CLUSTER[at0013] occurrences matches {0..1} matches {    -- Essential amino acids
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0028] occurrences matches {0..1} matches {    -- Valine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0027] occurrences matches {0..1} matches {    -- Tryptophan
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0026] occurrences matches {0..1} matches {    -- Threonine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0025] occurrences matches {0..1} matches {    -- Phenylalanine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0024] occurrences matches {0..1} matches {    -- Methionine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0023] occurrences matches {0..1} matches {    -- Lysine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0022] occurrences matches {0..1} matches {    -- Leucine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0021] occurrences matches {0..1} matches {    -- Isoleucine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0020] occurrences matches {0..1} matches {    -- Histidine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+						}
+					}
+					CLUSTER[at0012] occurrences matches {0..1} matches {    -- Conditionally essential amino acids
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0030] occurrences matches {0..1} matches {    -- Cysteine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0029] occurrences matches {0..1} matches {    -- Arginine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0031] occurrences matches {0..1} matches {    -- Glutamine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0032] occurrences matches {0..1} matches {    -- Glycine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0033] occurrences matches {0..1} matches {    -- Proline
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0034] occurrences matches {0..1} matches {    -- Tyrosine
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"mg">
+											>
+										>
+									>
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	terminologies_available = <"MATVARETABELL","EUROFIR","SNOMED-CT">
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Macronutrients">
+					description = <"The nutrients that are consumed in the largest quantities and used for energy, growth and body functions by living organisms.">
+				>
+				["at0006"] = <
+					text = <"Proteins">
+					description = <"Assessment of protein of an individual.">
+				>
+				["at0009"] = <
+					text = <"Carbohydrates">
+					description = <"Assessment of carbohydrates of an individual.">
+				>
+				["at0012"] = <
+					text = <"Conditionally essential amino acids">
+					description = <"Assessment of conditionally essential amino acids  are these  sinthetized in human organism (not essential), but they are used more faster then produced.">
+				>
+				["at0013"] = <
+					text = <"Essential amino acids">
+					description = <"Assessment of essential amino acids of an individual.">
+				>
+				["at0014"] = <
+					text = <"Non-essential amino acids">
+					description = <"Assessment of not essential amino acids of an individual.">
+				>
+				["at0015"] = <
+					text = <"Alanine">
+					description = <"Assessment of alanine amino acid.">
+				>
+				["at0016"] = <
+					text = <"Aspartic acid">
+					description = <"Assessment of aspartic acid  amino acid.">
+				>
+				["at0017"] = <
+					text = <"Asparagine">
+					description = <"Assessment of aspargineis amino acid.">
+				>
+				["at0018"] = <
+					text = <"Glutamic acid">
+					description = <"Assessment of glutamic amino acid.">
+				>
+				["at0019"] = <
+					text = <"Serine">
+					description = <"Assessment of serine amino acid.">
+				>
+				["at0020"] = <
+					text = <"Histidine">
+					description = <"Histidine is a type of essential amino acids.">
+				>
+				["at0021"] = <
+					text = <"Isoleucine">
+					description = <"Isoleucine is a type of essential amino acids.">
+				>
+				["at0022"] = <
+					text = <"Leucine">
+					description = <"Assessment of Leucine is a type of essential amino acids.">
+				>
+				["at0023"] = <
+					text = <"Lysine">
+					description = <"Assessment of lysine amino acid.">
+				>
+				["at0024"] = <
+					text = <"Methionine">
+					description = <"Assessment of methionine amino acid.">
+				>
+				["at0025"] = <
+					text = <"Phenylalanine">
+					description = <"Assessment of phenylalanine amino acid.">
+				>
+				["at0026"] = <
+					text = <"Threonine">
+					description = <"Assessment of threonine amino acids.">
+				>
+				["at0027"] = <
+					text = <"Tryptophan">
+					description = <"Assessment of tryptophan amino acid.">
+				>
+				["at0028"] = <
+					text = <"Valine">
+					description = <"Assessment of valine amino acid.">
+				>
+				["at0029"] = <
+					text = <"Arginine">
+					description = <"Assessment of argine amino acids.">
+				>
+				["at0030"] = <
+					text = <"Cysteine">
+					description = <"Assessment of cysteine amino acid.">
+				>
+				["at0031"] = <
+					text = <"Glutamine">
+					description = <"Assessment of glutamine amino acids.">
+				>
+				["at0032"] = <
+					text = <"Glycine">
+					description = <"Assessment of glycine amino acids.">
+				>
+				["at0033"] = <
+					text = <"Proline">
+					description = <"Assessment of proline amino acids.">
+				>
+				["at0034"] = <
+					text = <"Tyrosine">
+					description = <"Assessment of tyrosine amino acids.">
+				>
+				["at0037"] = <
+					text = <"Fatty acids">
+					description = <"Assessment of dietary fatty acids of an individual.">
+				>
+				["at0038"] = <
+					text = <"Saturated">
+					description = <"Assessment of dietary saturated fatty acids of an individual.">
+				>
+				["at0040"] = <
+					text = <"Caprylic acid">
+					description = <"Assessment of dietary caprylic acid.">
+				>
+				["at0041"] = <
+					text = <"Caproic acid">
+					description = <"Assessment of caproic acid.">
+				>
+				["at0042"] = <
+					text = <"Lauric acid">
+					description = <"Assessment of lauric acid.">
+				>
+				["at0043"] = <
+					text = <"Myristic acid">
+					description = <"Assessment of myristic acid.">
+				>
+				["at0044"] = <
+					text = <"Palmitic acid">
+					description = <"Assessment of palmitic acid.">
+				>
+				["at0045"] = <
+					text = <"Stearic acid">
+					description = <"Assessment of stearic acid.">
+				>
+				["at0046"] = <
+					text = <"Mounsaturated">
+					description = <"Assessment of dietary monounsaturated fatty acids (n-9) of an individual.">
+				>
+				["at0048"] = <
+					text = <"Myristoleic acid">
+					description = <"Assessment of myristoleic acid.">
+				>
+				["at0049"] = <
+					text = <"Palmitoleic acid">
+					description = <"Assessment of palmitoleic acid.">
+				>
+				["at0050"] = <
+					text = <"Oleic acid">
+					description = <"Assessment of oleic acid.">
+				>
+				["at0051"] = <
+					text = <"Cis-vaccenic acid">
+					description = <"Assessment of cis-vaccenic acid  is a type of monousaturated fatty acids.">
+				>
+				["at0052"] = <
+					text = <"Eicosenoic acid">
+					description = <"Assessment of eicosenoic acid.">
+				>
+				["at0053"] = <
+					text = <"Docosapentaenoic acid">
+					description = <"Assessment of docosapentaenoic acid.">
+				>
+				["at0054"] = <
+					text = <"Polyunsaturated">
+					description = <"Assessment of polyunsaturated acids which include the n-6 fatty acids and n-3 fatty acids.">
+				>
+				["at0056"] = <
+					text = <"(n-3)">
+					description = <"Measurement of n-3 fatty acids of an individual.">
+				>
+				["at0057"] = <
+					text = <"(n-6)">
+					description = <"Assessment of linoleic acid of an individual.">
+				>
+				["at0058"] = <
+					text = <"Alpha linolenic acid (n-3)">
+					description = <"Assessment of a-linolenic acid.">
+				>
+				["at0059"] = <
+					text = <"Eicosapentaenoic acid">
+					description = <"Assessment of eicosapentaenoic  acid.">
+				>
+				["at0060"] = <
+					text = <"Docosahexaenoic acid">
+					description = <"Assessment of docosahexaenoic acid.">
+				>
+				["at0061"] = <
+					text = <"Docosapentaenoic acid">
+					description = <"Assessment of docosapentaenoic acid.">
+				>
+				["at0062"] = <
+					text = <"Linoleic acid (n-6)">
+					description = <"Assessment of linoleic acid.">
+				>
+				["at0063"] = <
+					text = <"Gama-linoleic acid">
+					description = <"Assessment of gama-linoleic acid.">
+				>
+				["at0064"] = <
+					text = <"Dihomo-gama-linoleic acid">
+					description = <"Assessment of dihomo-gama-linoleic acid.">
+					comment = <"Usikker SNOMED-CT">
+				>
+				["at0065"] = <
+					text = <"Arachidonic acid">
+					description = <"Assessment of arachidonic acid.">
+				>
+				["at0066"] = <
+					text = <"Adrenic acid">
+					description = <"Assessment of adrenic acid.">
+				>
+				["at0067"] = <
+					text = <"Docosapentaenoic acid">
+					description = <"Assessment of docosapentaenoic acid.">
+				>
+				["at0068"] = <
+					text = <"Trans fatty acid">
+					description = <"Assessment of dietary  trans fatty acids.">
+				>
+				["at0115"] = <
+					text = <"Sugars">
+					description = <"Assessment of sugars (1-2 degree of polymerization) of an individual.">
+				>
+				["at0116"] = <
+					text = <"Oligosaccharides">
+					description = <"Assessment of oligosaccharides (They have 3-9 degree of polymerization of an individual).">
+				>
+				["at0117"] = <
+					text = <"Polysaccharides">
+					description = <"Assessment of polysaccharides (They have more than 9 degree of polymerization).">
+				>
+				["at0118"] = <
+					text = <"Monosaccharides">
+					description = <"Assessment of monosaccharides (simple  carbohydrate) of an individual.">
+				>
+				["at0119"] = <
+					text = <"Disaccharides">
+					description = <"Assessment of disaccharides (carbohydrate constitued by two units of monossacharides).">
+				>
+				["at0120"] = <
+					text = <"Polyols">
+					description = <"Assessment of polyol.">
+				>
+				["at0121"] = <
+					text = <"Glucose">
+					description = <"Assessment of glucose.">
+				>
+				["at0123"] = <
+					text = <"Galactose">
+					description = <"Assessment of galactose.">
+				>
+				["at0124"] = <
+					text = <"Fructose">
+					description = <"Assessment of fructose.">
+				>
+				["at0125"] = <
+					text = <"Sucrose">
+					description = <"Assessment of sucrose.">
+				>
+				["at0126"] = <
+					text = <"Lactose">
+					description = <"Assessment of lactose.">
+				>
+				["at0127"] = <
+					text = <"Tetralose">
+					description = <"Assessment of tetralose.">
+				>
+				["at0128"] = <
+					text = <"Sorbitol">
+					description = <"Assessment of sorbitol.">
+				>
+				["at0129"] = <
+					text = <"Mannitol">
+					description = <"Assessment of mannitol.">
+				>
+				["at0133"] = <
+					text = <"Maltodextrins">
+					description = <"Assessment of maltodextrina  is a type of sugar of an individual.">
+				>
+				["at0134"] = <
+					text = <"Raffinose">
+					description = <"Assessment of rafinose.">
+				>
+				["at0135"] = <
+					text = <"Stachyose">
+					description = <"Assessment of staccose.">
+				>
+				["at0136"] = <
+					text = <"Fruit-oligosaccharides">
+					description = <"Assessment of fruit-oligosaccharides (FOS)  is a type of sugar.">
+				>
+				["at0137"] = <
+					text = <"Starch">
+					description = <"Measurement of starch, which is a complex carbohydrate and main energy reserve in plants, is present in grains, legumes, tubers, fruits, and root vegetables.">
+				>
+				["at0138"] = <
+					text = <"Non-starch">
+					description = <"Assessment of non-starch polysaccharides which are also known as dietary fiber.">
+				>
+				["at0139"] = <
+					text = <"Amylose">
+					description = <"Assessment of amylose.">
+				>
+				["at0140"] = <
+					text = <"Amylopectin">
+					description = <"Assessment of amylopectin.">
+				>
+				["at0141"] = <
+					text = <"Starch-resistant">
+					description = <"Assessment of starch-resistant  is a type of sugar.">
+				>
+				["at0142"] = <
+					text = <"Cellulose">
+					description = <"Assessment of cellulose.">
+				>
+				["at0143"] = <
+					text = <"Hemicellulose">
+					description = <"Assessment of hemicellulose.">
+				>
+				["at0144"] = <
+					text = <"Pectins">
+					description = <"Assessment of pectins.">
+				>
+				["at0145"] = <
+					text = <"Hydrocolloids">
+					description = <"Assessment of hydrocolloids is a type of sugar.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Makronæringsstoffer">
+					description = <"Næringsstoffene som konsumeres i de største mengder og brukes til energi, vekst og kroppsfunksjoner av levende organismer.">
+				>
+				["at0006"] = <
+					text = <"Proteiner">
+					description = <"Vurdering av protein til et individ.">
+				>
+				["at0009"] = <
+					text = <"Karbohydrater">
+					description = <"Vurdering av karbohydrater til et individ.">
+				>
+				["at0012"] = <
+					text = <"Betinget essensielle aminosyrer">
+					description = <"Vurdering av betinget essensielle aminosyrer er disse sintetisert i menneskelig organisme (ikke essensielle), men de brukes raskere enn produsert.">
+				>
+				["at0013"] = <
+					text = <"Essensielle aminosyrer">
+					description = <"Vurdering av essensielle aminosyrer til et individ.">
+				>
+				["at0014"] = <
+					text = <"Ikke-essensielle aminosyrer">
+					description = <"Vurdering av ikke essensielle aminosyrer til et individ.">
+				>
+				["at0015"] = <
+					text = <"Alanine">
+					description = <"Vurdering av alaninaminosyre.">
+				>
+				["at0016"] = <
+					text = <"Aspartat">
+					description = <"Vurdering av asparaginsyreaminosyre.">
+				>
+				["at0017"] = <
+					text = <"Asparagin">
+					description = <"Vurdering av aspargineis aminosyre.">
+				>
+				["at0018"] = <
+					text = <"Glutaminsyre">
+					description = <"Vurdering av glutaminsyre.">
+				>
+				["at0019"] = <
+					text = <"Serine">
+					description = <"Vurdering av serinaminosyre.">
+				>
+				["at0020"] = <
+					text = <"Histidin">
+					description = <"Histidin er en type essensielle aminosyrer.">
+				>
+				["at0021"] = <
+					text = <"Isoleucin">
+					description = <"Isoleucin er en type essensielle aminosyrer.">
+				>
+				["at0022"] = <
+					text = <"Leucin">
+					description = <"Vurdering av leucin er en type essensielle aminosyrer.">
+				>
+				["at0023"] = <
+					text = <"Lysin">
+					description = <"Vurdering av lysinaminosyre.">
+				>
+				["at0024"] = <
+					text = <"Metionin">
+					description = <"Vurdering av metioninaminosyre.">
+				>
+				["at0025"] = <
+					text = <"Fenylalanin">
+					description = <"Vurdering av fenylalaninaminosyre.">
+				>
+				["at0026"] = <
+					text = <"Treonin">
+					description = <"Vurdering av treoninaminosyrer.">
+				>
+				["at0027"] = <
+					text = <"Tryptofan">
+					description = <"Vurdering av tryptofan aminosyre.">
+				>
+				["at0028"] = <
+					text = <"Valin">
+					description = <"Vurdering av valinaminosyre.">
+				>
+				["at0029"] = <
+					text = <"Arginin">
+					description = <"Vurdering av arginaminosyrer.">
+				>
+				["at0030"] = <
+					text = <"Cystein">
+					description = <"Vurdering av cysteinaminosyre.">
+				>
+				["at0031"] = <
+					text = <"Glutamin">
+					description = <"Vurdering av glutaminaminosyrer.">
+				>
+				["at0032"] = <
+					text = <"Glycin">
+					description = <"Vurdering av glycinaminosyrer.">
+				>
+				["at0033"] = <
+					text = <"Proline">
+					description = <"Vurdering av prolinaminosyrer.">
+				>
+				["at0034"] = <
+					text = <"Tyrosin">
+					description = <"Vurdering av tyrosinaminosyrer.">
+				>
+				["at0037"] = <
+					text = <"Fettsyrer">
+					description = <"Vurdering av kostholdsfettsyrer til et individ.">
+				>
+				["at0038"] = <
+					text = <"Mettet">
+					description = <"Vurdering av mettede fettsyrer fra et individ.">
+				>
+				["at0040"] = <
+					text = <"Kaprylsyre">
+					description = <"Vurdering av kostholdskaprylsyre.">
+				>
+				["at0041"] = <
+					text = <"Kapronsyre">
+					description = <"Vurdering av kapronsyre.">
+				>
+				["at0042"] = <
+					text = <"Laurinsyre">
+					description = <"Vurdering av laurinsyre.">
+				>
+				["at0043"] = <
+					text = <"Myristinsyre">
+					description = <"Vurdering av myristinsyre.">
+				>
+				["at0044"] = <
+					text = <"Palmitinsyre">
+					description = <"Vurdering av palmitinsyre.">
+				>
+				["at0045"] = <
+					text = <"Stearinsyre">
+					description = <"Vurdering av stearinsyre.">
+				>
+				["at0046"] = <
+					text = <"Umettet">
+					description = <"Vurdering av enumettede fettsyrer (n-9) fra et individ.">
+				>
+				["at0048"] = <
+					text = <"Myristoleat">
+					description = <"Vurdering av myristolsyre.">
+				>
+				["at0049"] = <
+					text = <"Palmitoleinsyre">
+					description = <"Vurdering av palmitoleinsyre.">
+				>
+				["at0050"] = <
+					text = <"Oljesyre">
+					description = <"Vurdering av oljesyre.">
+				>
+				["at0051"] = <
+					text = <"Cis-vaksensyre">
+					description = <"Vurdering av cis-vaccinsyre er en type enumettede fettsyrer.">
+					comment = <"Usikker SNOMED-CT">
+				>
+				["at0052"] = <
+					text = <"Gadoljesyre">
+					description = <"Vurdering av eikosensyre/gadoljesyre.">
+					comment = <" no   11 cis-eikosensyre
+  no   gadoljesyre
+  en   11 cis-Eicosenoic acid (substance)
+  en   11 cis-Eicosenoic acid">
+				>
+				["at0053"] = <
+					text = <"Dokosapentaensyre">
+					description = <"Vurdering av dokosapentaensyre.">
+				>
+				["at0054"] = <
+					text = <"Flerumettet">
+					description = <"Vurdering av flerumettede syrer som inkluderer n-6 fettsyrene og n-3 fettsyrene.">
+				>
+				["at0056"] = <
+					text = <"(n-3)">
+					description = <"Måling av n-3 fettsyrer til et individ.">
+				>
+				["at0057"] = <
+					text = <"(n-6)">
+					description = <"Vurdering av linolsyre til et individ.">
+				>
+				["at0058"] = <
+					text = <"Alfa linolensyre (n-3)">
+					description = <"Vurdering av a-linolensyre.">
+				>
+				["at0059"] = <
+					text = <"Eikosapentaensyre">
+					description = <"Vurdering av eikosapentaensyre.">
+					comment = <"omega-3-fettsyre fra fisk">
+				>
+				["at0060"] = <
+					text = <"Dokosaheksaensyre">
+					description = <"Vurdering av dokosaheksaensyre.">
+				>
+				["at0061"] = <
+					text = <"Dokosapentaensyre">
+					description = <"Vurdering av dokosapentaensyre.">
+					comment = <"Usikker SNOMED-CT">
+				>
+				["at0062"] = <
+					text = <"Linolsyre (n-6)">
+					description = <"Vurdering av linolsyre.">
+				>
+				["at0063"] = <
+					text = <"Gama-linolsyre">
+					description = <"Vurdering av gama-linolsyre.">
+				>
+				["at0064"] = <
+					text = <"Dihomo-gama-linolsyre">
+					description = <"Vurdering av dihomo-gama-linolsyre.">
+					comment = <"*Usikker SNOMED-CT (en)">
+				>
+				["at0065"] = <
+					text = <"Arakidonsyre">
+					description = <"Vurdering av arakidonsyre.">
+				>
+				["at0066"] = <
+					text = <"Adreninsyre">
+					description = <"Vurdering av adreninsyre.">
+				>
+				["at0067"] = <
+					text = <"Dokosapentaensyre">
+					description = <"Vurdering av dokosapentaensyre.">
+				>
+				["at0068"] = <
+					text = <"Transfettsyre">
+					description = <"Vurdering av transfettsyrer i kosten.">
+				>
+				["at0115"] = <
+					text = <"Sukker">
+					description = <"Vurdering av sukkerarter (1-2 grad av polymerisering) av et individ.">
+				>
+				["at0116"] = <
+					text = <"Oligosakkarider">
+					description = <"Vurdering av oligosakkarider (De har 3-9 grad av polymerisering av et individ).">
+				>
+				["at0117"] = <
+					text = <"Polysakkarider">
+					description = <"Vurdering av polysakkarider (De har mer enn 9 grad av polymerisering).">
+				>
+				["at0118"] = <
+					text = <"Monosakkarider">
+					description = <"Vurdering av monosakkarider (enkle karbohydrater) til et individ.">
+				>
+				["at0119"] = <
+					text = <"Disakkarider">
+					description = <"Vurdering av disakkarider (karbohydrat som består av to enheter monosakkarider).">
+				>
+				["at0120"] = <
+					text = <"Polyoler">
+					description = <"Vurdering av polyol.">
+				>
+				["at0121"] = <
+					text = <"Glukose">
+					description = <"Vurdering av glukose.">
+				>
+				["at0123"] = <
+					text = <"Galaktose">
+					description = <"Vurdering av galaktose.">
+				>
+				["at0124"] = <
+					text = <"Fruktose">
+					description = <"Vurdering av fruktose.">
+				>
+				["at0125"] = <
+					text = <"Sukrose">
+					description = <"Vurdering av sukrose.">
+				>
+				["at0126"] = <
+					text = <"Laktose">
+					description = <"Vurdering av laktose.">
+				>
+				["at0127"] = <
+					text = <"Tetralose">
+					description = <"Vurdering av tetralose.">
+				>
+				["at0128"] = <
+					text = <"Sorbitol">
+					description = <"Vurdering av sorbitol.">
+				>
+				["at0129"] = <
+					text = <"Mannitol">
+					description = <"Vurdering av mannitol.">
+				>
+				["at0133"] = <
+					text = <"Maltodekstriner">
+					description = <"Vurdering av maltodextrina er en type sukker av et individ.">
+				>
+				["at0134"] = <
+					text = <"Raffinose">
+					description = <"Vurdering av rafinose.">
+				>
+				["at0135"] = <
+					text = <"Stakyose">
+					description = <"Vurdering av staccose.">
+				>
+				["at0136"] = <
+					text = <"Frukt-oligosakkarider">
+					description = <"Vurdering av frukt-oligosakkarider (FOS) er en type sukker.">
+				>
+				["at0137"] = <
+					text = <"Stivelse">
+					description = <"Måling av stivelse, som er et komplekst karbohydrat og hovedenergireserve i planter, finnes i korn, belgfrukter, knoller, frukt og rotgrønnsaker.">
+				>
+				["at0138"] = <
+					text = <"Ikke-stivelse">
+					description = <"Vurdering av ikke-stivelsespolysakkarider som også er kjent som kostfiber.">
+				>
+				["at0139"] = <
+					text = <"Amylose">
+					description = <"Vurdering av amylose.">
+				>
+				["at0140"] = <
+					text = <"Amylopektin">
+					description = <"Vurdering av amylopektin.">
+				>
+				["at0141"] = <
+					text = <"Stivelsesbestandig">
+					description = <"Vurdering av stivelsesbestandig er en type sukker.">
+				>
+				["at0142"] = <
+					text = <"Cellulose">
+					description = <"Vurdering av cellulose.">
+				>
+				["at0143"] = <
+					text = <"Hemicellulose">
+					description = <"Vurdering av hemicellulose.">
+				>
+				["at0144"] = <
+					text = <"Pektiner">
+					description = <"Vurdering av pektiner.">
+				>
+				["at0145"] = <
+					text = <"Hydrokolloider">
+					description = <"Vurdering av hydrokolloider er en type sukker.">
+				>
+			>
+		>
+	>
+	term_binding = <
+		["MATVARETABELL"] = <
+			items = <
+				["at0068"] = <[MATVARETABELL::Trans]>
+				["at0042"] = <[MATVARETABELL::C12_0Laurinsyre]>
+				["at0043"] = <[MATVARETABELL::C14_0Myristinsyre]>
+				["at0044"] = <[MATVARETABELL::C16_0Palmitinsyre]>
+				["at0045"] = <[MATVARETABELL::C18_0Stearinsyre]>
+				["at0062"] = <[MATVARETABELL::C18_2n-6Linolsyre]>
+				["at0058"] = <[MATVARETABELL::C18_3n-3AlfaLinolensyre]>
+				["at0059"] = <[MATVARETABELL::C20_3n-3Eikosatriensyre]>
+				["at0064"] = <[MATVARETABELL::C20_3n-6DihomoGammaLinolensyre]>
+				["at0065"] = <[MATVARETABELL::C20_4n-6Arakidonsyre]>
+				["at0049"] = <[MATVARETABELL::C16_1]>
+				["at0050"] = <[MATVARETABELL::C18_1]>
+				["at0006"] = <[MATVARETABELL::Protein]>
+				["at0009"] = <[MATVARETABELL::Karbo]>
+				["at0115"] = <[MATVARETABELL::Mono_plus_Di]>
+				["at0054"] = <[MATVARETABELL::Flerum]>
+				["at0046"] = <[MATVARETABELL::Enumet]>
+				["at0038"] = <[MATVARETABELL::Mettet]>
+			>
+		>
+		["EUROFIR"] = <
+			items = <
+				["at0068"] = <[EUROFIR::FATRS]>
+				["at0042"] = <[EUROFIR::F12_0]>
+				["at0043"] = <[EUROFIR::F14_0]>
+				["at0044"] = <[EUROFIR::F16_0]>
+				["at0045"] = <[EUROFIR::F18_0]>
+				["at0062"] = <[EUROFIR::F18_2CN6]>
+				["at0058"] = <[EUROFIR::F18_3N3]>
+				["at0059"] = <[EUROFIR::F20_3N3]>
+				["at0064"] = <[EUROFIR::F20_3N6]>
+				["at0065"] = <[EUROFIR::F20_4N6]>
+				["at0049"] = <[EUROFIR::F16_1]>
+				["at0050"] = <[EUROFIR::F18_1]>
+				["at0006"] = <[EUROFIR::PROT]>
+				["at0009"] = <[EUROFIR::CHO]>
+				["at0115"] = <[EUROFIR::SUGAR]>
+				["at0054"] = <[EUROFIR::FAPU]>
+				["at0046"] = <[EUROFIR::FAMS]>
+				["at0038"] = <[EUROFIR::FASAT]>
+			>
+		>
+		["SNOMED-CT"] = <
+			items = <
+				["at0068"] = <[SNOMED-CT::436831000124108]>
+				["at0040"] = <[SNOMED-CT::111998003]>
+				["at0041"] = <[SNOMED-CT::78713005]>
+				["at0042"] = <[SNOMED-CT::41504006]>
+				["at0043"] = <[SNOMED-CT::4546008]>
+				["at0044"] = <[SNOMED-CT::87044003]>
+				["at0045"] = <[SNOMED-CT::259577009]>
+				["at0048"] = <[SNOMED-CT::707604001]>
+				["at0049"] = <[SNOMED-CT::16546006]>
+				["at0050"] = <[SNOMED-CT::301304005]>
+				["at0051"] = <[SNOMED-CT::2507100]>
+				["at0052"] = <[SNOMED-CT::226363005]>
+				["at0053"] = <[SNOMED-CT::707463000]>
+				["at0054"] = <[SNOMED-CT::102717006]>
+				["at0058"] = <[SNOMED-CT::81868000]>
+				["at0059"] = <[SNOMED-CT::226367006]>
+				["at0060"] = <[SNOMED-CT::226368001]>
+				["at0061"] = <[SNOMED-CT::1014201000202101]>
+				["at0062"] = <[SNOMED-CT::8822004]>
+				["at0063"] = <[SNOMED-CT::13121007]>
+				["at0064"] = <[SNOMED-CT::707246002]>
+				["at0065"] = <[SNOMED-CT::3792001]>
+				["at0067"] = <[SNOMED-CT::707463000]>
+				["at0121"] = <[SNOMED-CT::67079006]>
+				["at0123"] = <[SNOMED-CT::38182007]>
+				["at0124"] = <[SNOMED-CT::58202007]>
+				["at0125"] = <[SNOMED-CT::11320009]>
+				["at0119"] = <[SNOMED-CT::15472007]>
+				["at0126"] = <[SNOMED-CT::47703008]>
+				["at0128"] = <[SNOMED-CT::19839007]>
+				["at0129"] = <[SNOMED-CT::387168006]>
+				["at0139"] = <[SNOMED-CT::226373007]>
+				["at0117"] = <[SNOMED-CT::71544008]>
+				["at0137"] = <[SNOMED-CT::39360003]>
+				["at0140"] = <[SNOMED-CT::14564001]>
+				["at0142"] = <[SNOMED-CT::68992005]>
+				["at0143"] = <[SNOMED-CT::53834009]>
+				["at0144"] = <[SNOMED-CT::55946005]>
+				["at0145"] = <[SNOMED-CT::400872007]>
+				["at0019"] = <[SNOMED-CT::14125007]>
+				["at0014"] = <[SNOMED-CT::63330006]>
+				["at0018"] = <[SNOMED-CT::85214009]>
+				["at0017"] = <[SNOMED-CT::87136001]>
+				["at0016"] = <[SNOMED-CT::430504000]>
+				["at0015"] = <[SNOMED-CT::58753009]>
+				["at0028"] = <[SNOMED-CT::72840006]>
+				["at0027"] = <[SNOMED-CT::54821000]>
+				["at0026"] = <[SNOMED-CT::52736009]>
+				["at0025"] = <[SNOMED-CT::63004003]>
+				["at0024"] = <[SNOMED-CT::70288006]>
+				["at0023"] = <[SNOMED-CT::75799006]>
+				["at0022"] = <[SNOMED-CT::83797003]>
+				["at0021"] = <[SNOMED-CT::14971004]>
+				["at0020"] = <[SNOMED-CT::60260004]>
+				["at0030"] = <[SNOMED-CT::5932006]>
+				["at0029"] = <[SNOMED-CT::52625008]>
+				["at0031"] = <[SNOMED-CT::25761002]>
+				["at0032"] = <[SNOMED-CT::15331006]>
+				["at0033"] = <[SNOMED-CT::52541003]>
+				["at0034"] = <[SNOMED-CT::27378009]>
+				["at0006"] = <[SNOMED-CT::88878007]>
+				["at0009"] = <[SNOMED-CT::2331003]>
+				["at0115"] = <[SNOMED-CT::74801000]>
+				["at0118"] = <[SNOMED-CT::116257004]>
+				["at0046"] = <[SNOMED-CT::436811000124102]>
+				["at0038"] = <[SNOMED-CT::102719009]>
+				["at0133"] = <[SNOMED-CT::130899006]>
+				["at0134"] = <[SNOMED-CT::116265001]>
+				["at0135"] = <[SNOMED-CT::226370005]>
+				["at0136"] = <[SNOMED-CT::712713006]>
+			>
+		>
+	>
