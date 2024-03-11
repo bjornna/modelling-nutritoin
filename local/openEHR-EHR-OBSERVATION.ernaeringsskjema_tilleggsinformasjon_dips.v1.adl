@@ -1,0 +1,222 @@
+archetype (adl_version=1.4; uid=90071494-083c-311e-9c8d-f0fdfd6da3c8)
+	openEHR-EHR-OBSERVATION.ernaeringsskjema_tilleggsinformasjon_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["date"] = <"2019-12-03">
+		["name"] = <"Morten Pavicevic Hørte">
+		["organisation"] = <"DIPS AS">
+		["email"] = <"mho@dips.no ">
+	>
+	lifecycle_state = <"development">
+	other_contributors = <"Borisa Barisa, DIPS AS, Norway ", ...>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Modellering av tilleggsinformasjon knyttet til NRS2002. ">
+			keywords = <"NRS2002","Ernæringsskjema">
+			use = <"Brukes for registrering av tilleggsinformasjon knyttet til NRS2002. ">
+			misuse = <"Arketypen skal ikke brukes i noen andre skjema enn Ernæringsskjema. ">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"9A80479423739A300706E976E048919F">
+		["build_uid"] = <"17eedf57-a939-3a3a-b5ff-2fec8240b8a6">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Ernæringsskjema Tilleggsinformasjon
+		data matches {
+			HISTORY[at0001] matches {    -- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..1} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0004] occurrences matches {0..1} matches {    -- Pasienten skal ikke screenes
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0005] occurrences matches {0..1} matches {    -- Pasientgrupper som ikke skal screenes
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0027] occurrences matches {0..1} matches {    -- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0007] occurrences matches {0..1} matches {    -- Vekttap
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0019] occurrences matches {0..1} matches {    -- Tidligere vekt
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::124]>
+														list = <
+															["1"] = <
+																units = <"kg">
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0011] occurrences matches {0..1} matches {    -- Bergenet vekttap
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::124]>
+														list = <
+															["1"] = <
+																units = <"kg">
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0012] occurrences matches {0..1} matches {    -- Dato for tidligere vekt
+												value matches {
+													DV_DATE_TIME matches {*}
+												}
+											}
+											ELEMENT[at0035] occurrences matches {0..1} matches {    -- Beregnet vektendring i prosent
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::507]>
+														list = <
+															["1"] = <
+																units = <"%">
+															>
+														>
+													>
+												}
+											}
+										}
+									}
+									CLUSTER[at0016] occurrences matches {0..1} matches {    -- Pasientens matinntak
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0017] occurrences matches {0..1} matches {    -- Pasientens matinntak
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0028,    -- Mer enn 75% av normalt behov
+															at0029,    -- 50-75% av normalt behov
+															at0030,    -- 25-50% av normalt behov
+															at0031]    -- 0-25% av normalt behov
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0032] occurrences matches {0..1} matches {    -- Pasientens Allmentilstand
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0034] occurrences matches {0..1} matches {    -- Har pasienten nedsatt allmentilstand?
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Ernæringsskjema Tilleggsinformasjon">
+					description = <"Modellering av tilleggsinformasjon knyttet til NRS2002. ">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Pasienten skal ikke screenes">
+					description = <"Informasjon om pasient skal/ikke skal screenes. ">
+				>
+				["at0005"] = <
+					text = <"Pasientgrupper som ikke skal screenes">
+					description = <"Angir pasientgrupper som ikke skal screenes.">
+				>
+				["at0007"] = <
+					text = <"Vekttap">
+					description = <"Inneholder informasjon om vekttap. ">
+				>
+				["at0011"] = <
+					text = <"Bergenet vekttap">
+					description = <"Angir beregnet vektap mellom sist registrerte vekt og tidligere registrete vekt. ">
+				>
+				["at0012"] = <
+					text = <"Dato for tidligere vekt">
+					description = <"Angir dato for tidligere registrerte vekt. ">
+				>
+				["at0016"] = <
+					text = <"Pasientens matinntak">
+					description = <"Pasientens matinntak i løpet av siste uken. ">
+				>
+				["at0017"] = <
+					text = <"Pasientens matinntak">
+					description = <"Angir pasientens matinntak i løpet av siste uken i prosent. ">
+				>
+				["at0019"] = <
+					text = <"Tidligere vekt">
+					description = <"Angir tidligere vekt. ">
+				>
+				["at0027"] = <
+					text = <"Kommentar">
+					description = <"Angir kommentar til hvorfor pasient ikke skal screenes. ">
+				>
+				["at0028"] = <
+					text = <"Mer enn 75% av normalt behov">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"50-75% av normalt behov">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"25-50% av normalt behov">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"0-25% av normalt behov">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Pasientens Allmentilstand">
+					description = <"Spørsmål om pasientens allmenntilstand">
+				>
+				["at0034"] = <
+					text = <"Har pasienten nedsatt allmentilstand?">
+					description = <"Har pasienten nedsatt allmenntilstand">
+				>
+				["at0035"] = <
+					text = <"Beregnet vektendring i prosent">
+					description = <"Angir beregnet vektendring mellom sist registrerte vekt og tidligere registrete vekt. ">
+				>
+			>
+		>
+	>
