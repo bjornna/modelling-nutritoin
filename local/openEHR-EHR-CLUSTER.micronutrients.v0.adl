@@ -1,0 +1,933 @@
+archetype (adl_version=1.4; uid=6cc7cd82-e39e-4410-8f48-3c83aed51ede)
+	openEHR-EHR-CLUSTER.micronutrients.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2016-12-14">
+		["name"] = <"Priscila Maranhão; Gustavo Bacelar">
+		["organisation"] = <"MEDCIDS-FMUP; VIRTUAL CARE">
+		["email"] = <"priscilamaranhao@gmail.com; gbacelar@gmail.com">
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Ricardo Correia","Pedro Marques","Duarte Ferreira","Heather Leslie, Atomica Informatics, Australia","Silje Ljosland Bakke, Norway">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere næringsstoffene som kreves i spormengder.">
+			keywords = <"næringsstoffer","kosthold","vitaminer","mineraler">
+			copyright = <"© openEHR Foundation">
+			use = <"Brukes til å registrere næringsstoffene som kreves i spormengder. Denne arketypen er designet for å brukes innenfor 'Detaljer'-SLOT i arketypen OBSERVATION.dietary_nutrients.">
+			misuse = <"Nei skal brukes til å registrere målinger av vitaminer og mineraler i blodanalyser - bruk OBSERVATION.laboratory_test til dette formålet. Skal ikke brukes til å registrere bestilling eller administrering av kosttilskudd - bruk medisinrelaterte arketyper til dette formålet.">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the nutrients that are required in trace amounts.">
+			keywords = <"nutrients","diet","vitamins","minerals">
+			copyright = <"© openEHR Foundation">
+			use = <"Use to record the nutrients that are required in trace amounts.
+
+This archetype has been designed to be used within the 'Details' SLOT in the OBSERVATION.dietary_nutrients archetype.">
+			misuse = <"No to be used to record measurements of vitamins and minerals in blood analyses - use the OBSERVATION.laboratory_test for this purpose.
+
+Not to be used to record the the ordering or administration of dietary supplements - use Medication-related archetypes for this purpose.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Franceschini, SCC; Priore, SE; Euclydes, MP et al. Necessidades e recomendações de nutrientes. In: Cuppari, L. Guias de medicina ambulatorial e hospitalar da EPM-UNIFESP, Nutricção Clínica no Adulto. Barueri, SP: Manole, 2014. 
+
+Institute of Medicine/ Food and nutrition Board, 2011. Dietary reference Intake. Disponível em: <https://ods.od.nih.gov/Health_Information/Dietary_Reference_Intakes.aspx>
+
+FAO/WHO (Food and Agricultural/World Health Organization). Classificação dos Carboidratos - 1998. Disponível em: <http://fao.org>
+
+Caruso, L. Distúrbios do trato digestório. In: Cuppari, L. Guias de medicina ambulatorial e hospitalar da EPM-UNIFESP, Nutricção Clínica no Adulto. Barueri, SP: Manole, 2014.">
+		["current_contact"] = <"Heather Leslie, Atomica Informatics<heather.leslie@atomicainformatics.com>">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"5344b8cf4c98863b8678af20644dcf84">
+		["build_uid"] = <"1a99393d-06a8-4833-a407-da7fbd60cdc9">
+		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Micronutrients
+		items cardinality matches {2..*; unordered} matches {
+			CLUSTER[at0076] occurrences matches {0..1} matches {    -- Vitamins
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0079] occurrences matches {0..1} matches {    -- Vitamin A
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"ug">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0080] occurrences matches {0..1} matches {    -- Vitamin B6
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0081] occurrences matches {0..1} matches {    -- Vitamin B12
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"ug">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0082] occurrences matches {0..1} matches {    -- Biotin
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"ug">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0083] occurrences matches {0..1} matches {    -- Vitamin C
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0084] occurrences matches {0..1} matches {    -- Carotenoids
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0085] occurrences matches {0..1} matches {    -- Choline
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"ug">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0086] occurrences matches {0..1} matches {    -- Vitamin D
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::385]>
+								list = <
+									["1"] = <
+										units = <"[iU]">
+										magnitude = <|>=0.0|>
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0087] occurrences matches {0..1} matches {    -- Vitamin E
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0088] occurrences matches {0..1} matches {    -- Folate
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"ug">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0089] occurrences matches {0..1} matches {    -- Vitamin K
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"ug">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0090] occurrences matches {0..1} matches {    -- Niacin
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0091] occurrences matches {0..1} matches {    -- Pantothenic acid
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0092] occurrences matches {0..1} matches {    -- Riboflavin
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0093] occurrences matches {0..1} matches {    -- Thiamin
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+				}
+			}
+			CLUSTER[at0077] occurrences matches {0..1} matches {    -- Minerals
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0109] occurrences matches {0..1} matches {    -- Arsenic
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"ug">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0110] occurrences matches {0..1} matches {    -- Boron
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0094] occurrences matches {0..1} matches {    -- Calcium
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0107] occurrences matches {0..1} matches {    -- Chloride
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"g">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0095] occurrences matches {0..1} matches {    -- Chromium
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"ug">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0096] occurrences matches {0..1} matches {    -- Copper
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"ug">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0097] occurrences matches {0..1} matches {    -- Fluoride
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0098] occurrences matches {0..1} matches {    -- Iodine
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"ug">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0099] occurrences matches {0..1} matches {    -- Iron
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0100] occurrences matches {0..1} matches {    -- Magnesium
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0101] occurrences matches {0..1} matches {    -- Manganese
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0102] occurrences matches {0..1} matches {    -- Molybdenum
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"ug">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0111] occurrences matches {0..1} matches {    -- Nickel
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0103] occurrences matches {0..1} matches {    -- Phosphorus
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0104] occurrences matches {0..1} matches {    -- Potassium
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"g">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0105] occurrences matches {0..1} matches {    -- Selenium
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"ug">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0112] occurrences matches {0..1} matches {    -- Silicon
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0106] occurrences matches {0..1} matches {    -- Sodium
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"g">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0113] occurrences matches {0..1} matches {    -- Vanadium
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0108] occurrences matches {0..1} matches {    -- Zinc
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	terminologies_available = <"MATVARETABELL","EUROFIR","SNOMED-CT">
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Micronutrients">
+					description = <"The nutrients that are required in trace amounts for the normal growth and development of living organisms.">
+				>
+				["at0076"] = <
+					text = <"Vitamins">
+					description = <"Assessment of vitamins of an individual.">
+				>
+				["at0077"] = <
+					text = <"Minerals">
+					description = <"Assessment of minerals of an individual.">
+				>
+				["at0079"] = <
+					text = <"Vitamin A">
+					description = <"Assessment of vitamin A.">
+				>
+				["at0080"] = <
+					text = <"Vitamin B6">
+					description = <"Assessment of vitamin B6 (pyridoxine and related compounds).">
+				>
+				["at0081"] = <
+					text = <"Vitamin B12">
+					description = <"Assessment of v itamin B12 (cobalamin).">
+				>
+				["at0082"] = <
+					text = <"Biotin">
+					description = <"Assessment of biotin.">
+				>
+				["at0083"] = <
+					text = <"Vitamin C">
+					description = <"Assessment of vitamin C (ascorbic acid).">
+				>
+				["at0084"] = <
+					text = <"Carotenoids">
+					description = <"Assessment of carotenoids.">
+				>
+				["at0085"] = <
+					text = <"Choline">
+					description = <"Assessment of choline.">
+				>
+				["at0086"] = <
+					text = <"Vitamin D">
+					description = <"Assessment of vitamina D.">
+				>
+				["at0087"] = <
+					text = <"Vitamin E">
+					description = <"Assessment of Vitamin E which is a fat-soluble nutrient that functions as a chain-breaking
+antioxidant in the body by preventing the spread of free-radical reactions.">
+				>
+				["at0088"] = <
+					text = <"Folate">
+					description = <"Assessment of Folate which is a B vitamin that functions as a coenzyme in the metabolism of
+nucleic and amino acids.">
+				>
+				["at0089"] = <
+					text = <"Vitamin K">
+					description = <"Assessment of vitamin K which presents functions such as a coenzyme for biological reactions involved in
+blood coagulation and bone metabolism.">
+				>
+				["at0090"] = <
+					text = <"Niacin">
+					description = <"Assessment of niacin  which is involved in many biological
+reactions, including intracellular respiration and fatty acid synthesis.">
+				>
+				["at0091"] = <
+					text = <"Pantothenic acid">
+					description = <"Assessment of pantothenic acid functions which is a component of coenzyme A (CoA), which is involved in fatty acid metabolism.">
+				>
+				["at0092"] = <
+					text = <"Riboflavin">
+					description = <"Assessment of riboflavin (vitamin B2)  which presents functions as a coenzyme for numerous oxidation–reduction reactions in several metabolic pathways and in energy production.">
+				>
+				["at0093"] = <
+					text = <"Thiamin">
+					description = <"Assessment of thiamin, which is also known as vitamin B1 and aneurin, functions as a coenzyme in the metabolism of carbohydrates and branched-chain amino acids.">
+				>
+				["at0094"] = <
+					text = <"Calcium">
+					description = <"Assessment of calcium  which plays a key role in bone health. In fact, more than 99 percent of total body calcium is found in the bones and teeth. Calcium is also involved in vascular, neuromuscular, and glandular functions in the body.">
+				>
+				["at0095"] = <
+					text = <"Chromium">
+					description = <"Assessment of chromium which  presents potentiates the action of insulin and may improve glucose
+tolerance.">
+				>
+				["at0096"] = <
+					text = <"Copper">
+					description = <"Assessement of copper functions  as a component of several metalloenzymes, which act
+as oxidases in the reduction of molecular oxygen.">
+				>
+				["at0097"] = <
+					text = <"Fluoride">
+					description = <"Assessment of fluoride, which  is vital for the health of teeth and bones. About 99 percent of body fluoride is found in calcified tissues, where it protects against dental caries and can stimulate new bone formation.">
+				>
+				["at0098"] = <
+					text = <"Iodine">
+					description = <"Assessment of Iodine which is an essential component of thyroid hormones that are involved in the regulation of various enzymes and metabolic processes.">
+				>
+				["at0099"] = <
+					text = <"Iron">
+					description = <"Assessment of iron which is a critical component of several proteins, including enzymes, cytochromes, myoglobin, and hemoglobin, the latter of which transports oxygen throughout the body.">
+				>
+				["at0100"] = <
+					text = <"Magnesium">
+					description = <"Assessment of magnesium which is involved in more than 300 enzymatic processes in the
+body, as well as in bone health and in the maintenance of intracellular
+levels of potassium and calcium.">
+				>
+				["at0101"] = <
+					text = <"Manganese">
+					description = <"Assessment of manganese which is involved in the formation of bone and in specific reactions related to amino acid, cholesterol, and carbohydrate metabolism.">
+				>
+				["at0102"] = <
+					text = <"Molybdenum">
+					description = <"Assessment of molybdenum which presents functions as a cofactor for several enzymes, including
+sulfite oxidase, xanthine oxidase, and aldehyde oxidase.">
+				>
+				["at0103"] = <
+					text = <"Phosphorus">
+					description = <"Assessment of phosphorus is found in nature (e.g., foods, water, and living
+tissues) primarily as phosphate (PO4).">
+				>
+				["at0104"] = <
+					text = <"Potassium">
+					description = <"Assessment of the potassium which is the main intracellular cation in the body and is
+required for normal cellular function.">
+				>
+				["at0105"] = <
+					text = <"Selenium">
+					description = <"Assessment of selenium, which is an antioxidant nutrient involved in the defense against oxidative stress.">
+				>
+				["at0106"] = <
+					text = <"Sodium">
+					description = <"Assessment of sodium  which is necessary to maintain extracellular fluid volume
+and plasma osmolality.">
+				>
+				["at0107"] = <
+					text = <"Chloride">
+					description = <"Assessment of chloride which is necessary to maintain extracellular fluid volume
+and plasma osmolality.">
+				>
+				["at0108"] = <
+					text = <"Zinc">
+					description = <"Assessment of zinc which is crucial for growth and development. It facilitates several enzymatic processes related to the metabolism of protein, carbohydrates, and fats.">
+				>
+				["at0109"] = <
+					text = <"Arsenic">
+					description = <"Assessment of arsenic, that play a beneficial role in some physiological processes of certain animal species.">
+				>
+				["at0110"] = <
+					text = <"Boron">
+					description = <"Assessment of the  boron which play a beneficial role in some physiological processes of certain
+animal species.">
+				>
+				["at0111"] = <
+					text = <"Nickel">
+					description = <"Assessment of the nickel that play a beneficial role in some physiological processes of certain
+animal species.">
+				>
+				["at0112"] = <
+					text = <"Silicon">
+					description = <"Assessment of the silicon, which play a beneficial role in some physiological processes of certain.animal species.">
+				>
+				["at0113"] = <
+					text = <"Vanadium">
+					description = <"Assessment of the 
+vanadium that play a beneficial role in some physiological processes of certain.
+animal species.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Mikronæringsstoffer">
+					description = <"Næringsstoffene som kreves i spormengder for normal vekst og utvikling av levende organismer.">
+				>
+				["at0076"] = <
+					text = <"Vitaminer">
+					description = <"Vurdering av vitaminer til et individ.">
+				>
+				["at0077"] = <
+					text = <"Mineraler">
+					description = <"Vurdering av mineraler til et individ.">
+				>
+				["at0079"] = <
+					text = <"Vitamin A">
+					description = <"Vurdering av vitamin A.">
+				>
+				["at0080"] = <
+					text = <"Vitamin B6">
+					description = <"Vurdering av vitamin B6 (pyridoksin og relaterte forbindelser).">
+				>
+				["at0081"] = <
+					text = <"Vitamin B12">
+					description = <"Vurdering av v itamin B12 (kobalamin).">
+				>
+				["at0082"] = <
+					text = <"Biotin">
+					description = <"Vurdering av biotin.">
+				>
+				["at0083"] = <
+					text = <"Vitamin C">
+					description = <"Vurdering av vitamin C (askorbinsyre).">
+				>
+				["at0084"] = <
+					text = <"Karotenoider">
+					description = <"Vurdering av karotenoider.">
+				>
+				["at0085"] = <
+					text = <"Kolin">
+					description = <"Vurdering av kolin.">
+				>
+				["at0086"] = <
+					text = <"Vitamin D">
+					description = <"Vurdering av vitamin D.">
+				>
+				["at0087"] = <
+					text = <"Vitamin E">
+					description = <"Vurdering av Vitamin E som er et fettløselig næringsstoff som fungerer som en kjedebrytende antioksidant i kroppen ved å hindre spredning av frie radikaler.">
+				>
+				["at0088"] = <
+					text = <"Folat">
+					description = <"Vurdering av Folat som er et B-vitamin som fungerer som et koenzym i metabolismen av nuklein- og aminosyrer.">
+				>
+				["at0089"] = <
+					text = <"Vitamin K">
+					description = <"Vurdering av vitamin K som presenterer funksjoner som et koenzym for biologiske reaksjoner involvert i blodkoagulasjon og benmetabolisme.">
+				>
+				["at0090"] = <
+					text = <"Niacin">
+					description = <"Vurdering av niacin som er involvert i mange biologiske reaksjoner, inkludert intracellulær respirasjon og fettsyresyntese.">
+				>
+				["at0091"] = <
+					text = <"Pantotensyre">
+					description = <"Vurdering av pantotensyrefunksjoner som er en komponent av koenzym A (CoA), som er involvert i fettsyremetabolismen.">
+				>
+				["at0092"] = <
+					text = <"Riboflavin">
+					description = <"Vurdering av riboflavin (vitamin B2) som fungerer som et koenzym for en rekke oksidasjons-reduksjonsreaksjoner i flere metabolske veier og i energiproduksjon.">
+				>
+				["at0093"] = <
+					text = <"Tiamin">
+					description = <"Vurdering av tiamin, som også er kjent som vitamin B1 og aneurin, fungerer som et koenzym i metabolismen av karbohydrater og forgrenede aminosyrer.">
+				>
+				["at0094"] = <
+					text = <"Kalsium">
+					description = <"Vurdering av kalsium som spiller en nøkkelrolle i beinhelsen. Faktisk finnes mer enn 99 prosent av totalt kalsium i kroppen i bein og tenner. Kalsium er også involvert i vaskulære, nevromuskulære og kjertelfunksjoner i kroppen.">
+				>
+				["at0095"] = <
+					text = <"Krom">
+					description = <"Vurdering av krom som presenterer potensierer virkningen av insulin og kan forbedre glukosetoleransen.">
+				>
+				["at0096"] = <
+					text = <"Kobber">
+					description = <"Vurdering av kobber fungerer som en komponent i flere metalloenzymer, som fungerer som oksidaser i reduksjonen av molekylært oksygen.">
+				>
+				["at0097"] = <
+					text = <"Fluor">
+					description = <"Vurdering av fluor, som er avgjørende for helsen til tenner og bein. Omtrent 99 prosent av kroppens fluor finnes i forkalket vev, der det beskytter mot tannkaries og kan stimulere ny beindannelse.">
+				>
+				["at0098"] = <
+					text = <"Jod">
+					description = <"Vurdering av jod som er en essensiell komponent i skjoldbruskhormoner som er involvert i reguleringen av ulike enzymer og metabolske prosesser.">
+				>
+				["at0099"] = <
+					text = <"Jern">
+					description = <"Vurdering av jern som er en kritisk komponent i flere proteiner, inkludert enzymer, cytokromer, myoglobin og hemoglobin, hvor sistnevnte transporterer oksygen gjennom hele kroppen.">
+				>
+				["at0100"] = <
+					text = <"Magnesium">
+					description = <"Vurdering av magnesium som er involvert i mer enn 300 enzymatiske prosesser i kroppen, samt i beinhelse og i vedlikehold av intracellulære nivåer av kalium og kalsium.">
+				>
+				["at0101"] = <
+					text = <"Mangan">
+					description = <"Vurdering av mangan som er involvert i dannelsen av bein og i spesifikke reaksjoner relatert til aminosyre-, kolesterol- og karbohydratmetabolisme.">
+				>
+				["at0102"] = <
+					text = <"Molybden">
+					description = <"Vurdering av molybden som presenterer fungerer som en kofaktor for flere enzymer, inkludert sulfittoksidase, xanthinoksidase og aldehydoksidase.">
+				>
+				["at0103"] = <
+					text = <"Fosfor">
+					description = <"Vurdering av fosfor finnes i naturen (f.eks. mat, vann og levende vev) primært som fosfat (PO4).">
+				>
+				["at0104"] = <
+					text = <"Kalium">
+					description = <"Vurdering av kalium som er den viktigste intracellulære kationen i kroppen og er nødvendig for normal cellulær funksjon.">
+				>
+				["at0105"] = <
+					text = <"Selen">
+					description = <"Vurdering av selen, som er et antioksidant næringsstoff involvert i forsvaret mot oksidativt stress.">
+				>
+				["at0106"] = <
+					text = <"Natrium">
+					description = <"Vurdering av natrium som er nødvendig for å opprettholde ekstracellulært væskevolum og plasmaosmolalitet.">
+				>
+				["at0107"] = <
+					text = <"Klorid">
+					description = <"Vurdering av klorid som er nødvendig for å opprettholde ekstracellulært væskevolum og plasmaosmolalitet.">
+					comment = <" no   klorid
+  no   kloridsalt
+  en   Chloride salt (substance)
+  en   Chloride salt
+  en   Chloride
+  en   Cl - Chloride">
+				>
+				["at0108"] = <
+					text = <"Sink">
+					description = <"Vurdering av sink som er avgjørende for vekst og utvikling. Det letter flere enzymatiske prosesser relatert til metabolismen av protein, karbohydrater og fett.">
+				>
+				["at0109"] = <
+					text = <"Arsenikk">
+					description = <"Vurdering av arsen, som spiller en gunstig rolle i noen fysiologiske prosesser hos visse dyrearter.">
+				>
+				["at0110"] = <
+					text = <"Bor">
+					description = <"Vurdering av bor som spiller en gunstig rolle i noen fysiologiske prosesser hos visse dyrearter.">
+				>
+				["at0111"] = <
+					text = <"Nikkel">
+					description = <"Vurdering av nikkel som spiller en gunstig rolle i noen fysiologiske prosesser hos visse dyrearter.">
+					comment = <"Veldig usikker på SNOMED-CT koden for denne">
+				>
+				["at0112"] = <
+					text = <"Silisium">
+					description = <"Vurdering av silisium, som spiller en gunstig rolle i noen fysiologiske prosesser av visse.dyrearter.">
+				>
+				["at0113"] = <
+					text = <"Vanadium">
+					description = <"Vurdering av vanadium som spiller en gunstig rolle i noen fysiologiske prosesser av visse. dyrearter.">
+				>
+			>
+		>
+	>
+	term_binding = <
+		["MATVARETABELL"] = <
+			items = <
+				["at0079"] = <[MATVARETABELL::Vit--A]>
+				["at0083"] = <[MATVARETABELL::Vit--C]>
+				["at0086"] = <[MATVARETABELL::Vit--D]>
+				["at0087"] = <[MATVARETABELL::Vit--E]>
+				["at0104"] = <[MATVARETABELL::K]>
+				["at0106"] = <[MATVARETABELL::Na]>
+				["at0103"] = <[MATVARETABELL::P]>
+				["at0099"] = <[MATVARETABELL::Fe]>
+				["at0096"] = <[MATVARETABELL::Cu]>
+				["at0108"] = <[MATVARETABELL::Zn]>
+				["at0105"] = <[MATVARETABELL::Se]>
+				["at0080"] = <[MATVARETABELL::Vit--B6]>
+				["at0081"] = <[MATVARETABELL::Vit--B12]>
+				["at0088"] = <[MATVARETABELL::Folat]>
+				["at0093"] = <[MATVARETABELL::Vit--B1]>
+				["at0094"] = <[MATVARETABELL::Ca]>
+				["at0098"] = <[MATVARETABELL::I]>
+				["at0100"] = <[MATVARETABELL::Mg]>
+				["at0092"] = <[MATVARETABELL::Vit--B2]>
+				["at0077"] = <[MATVARETABELL::Minerals]>
+			>
+		>
+		["EUROFIR"] = <
+			items = <
+				["at0079"] = <[EUROFIR::VITA]>
+				["at0083"] = <[EUROFIR::VITC]>
+				["at0086"] = <[EUROFIR::VITD]>
+				["at0087"] = <[EUROFIR::VITE]>
+				["at0104"] = <[EUROFIR::K]>
+				["at0106"] = <[EUROFIR::NA]>
+				["at0103"] = <[EUROFIR::P]>
+				["at0099"] = <[EUROFIR::FE]>
+				["at0096"] = <[EUROFIR::CU]>
+				["at0108"] = <[EUROFIR::ZN]>
+				["at0105"] = <[EUROFIR::SE]>
+				["at0080"] = <[EUROFIR::VITB6]>
+				["at0081"] = <[EUROFIR::VITB12]>
+				["at0088"] = <[EUROFIR::FOL]>
+				["at0093"] = <[EUROFIR::THIA]>
+				["at0094"] = <[EUROFIR::CA]>
+				["at0098"] = <[EUROFIR::ID]>
+				["at0100"] = <[EUROFIR::MG]>
+				["at0092"] = <[EUROFIR::RIBF]>
+			>
+		>
+		["SNOMED-CT"] = <
+			items = <
+				["at0079"] = <[SNOMED-CT::787948005]>
+				["at0086"] = <[SNOMED-CT::30178006]>
+				["at0089"] = <[SNOMED-CT::65183007]>
+				["at0080"] = <[SNOMED-CT::787967009]>
+				["at0081"] = <[SNOMED-CT::781584003]>
+				["at0088"] = <[SNOMED-CT::792796007]>
+				["at0090"] = <[SNOMED-CT::273943001]>
+				["at0085"] = <[SNOMED-CT::65123005]>
+				["at0082"] = <[SNOMED-CT::8919000]>
+				["at0084"] = <[SNOMED-CT::413767000]>
+				["at0087"] = <[SNOMED-CT::37237003]>
+				["at0091"] = <[SNOMED-CT::86431009]>
+				["at0092"] = <[SNOMED-CT::13235001]>
+				["at0093"] = <[SNOMED-CT::259659006]>
+				["at0109"] = <[SNOMED-CT::47809000]>
+				["at0110"] = <[SNOMED-CT::70597009]>
+				["at0094"] = <[SNOMED-CT::5540006]>
+				["at0107"] = <[SNOMED-CT::50213009]>
+				["at0095"] = <[SNOMED-CT::111070004]>
+				["at0096"] = <[SNOMED-CT::66925006]>
+				["at0097"] = <[SNOMED-CT::35883004]>
+				["at0098"] = <[SNOMED-CT::44588005]>
+				["at0099"] = <[SNOMED-CT::3829006]>
+				["at0100"] = <[SNOMED-CT::72717003]>
+				["at0101"] = <[SNOMED-CT::87869004]>
+				["at0102"] = <[SNOMED-CT::71128006]>
+				["at0111"] = <[SNOMED-CT::33396006]>
+				["at0103"] = <[SNOMED-CT::30820000]>
+				["at0104"] = <[SNOMED-CT::88480006]>
+				["at0105"] = <[SNOMED-CT::22038003]>
+				["at0112"] = <[SNOMED-CT::51420009]>
+				["at0106"] = <[SNOMED-CT::39972003]>
+				["at0113"] = <[SNOMED-CT::18925001]>
+				["at0108"] = <[SNOMED-CT::86739005]>
+				["at0077"] = <[SNOMED-CT::87918000]>
+				["at0076"] = <[SNOMED-CT::87708000]>
+				["at0083"] = <[SNOMED-CT::787952005]>
+			>
+		>
+	>
